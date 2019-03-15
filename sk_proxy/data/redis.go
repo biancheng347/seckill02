@@ -115,5 +115,7 @@ func (p RedisPoolConf)InitRedisPoolValue(redisPool **redis.Pool) (err error) {
 
 //加载黑名单列表
 func loadBlackList() {
+	//用户ID
+
 }
 

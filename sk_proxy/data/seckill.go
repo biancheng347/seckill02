@@ -96,6 +96,7 @@ type SecKillConf struct {
 
 func newSeckillConf() (*SecKillConf) {
 	return &SecKillConf{
-
+		IPBlackMap: make(map[string]bool,10000),
+		IDBlackMap:make(map[int]bool,10000),
 	}
 }
