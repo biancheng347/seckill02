@@ -12,5 +12,6 @@
 *.out
 
 #project
+
 .idea/workspace.xml
 /.idea/%
