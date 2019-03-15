@@ -1,9 +1,12 @@
-package config
+package data
 
 import (
 	"github.com/coreos/etcd/client"
-	"gopkg.in/redis.v5"
 	"sync"
+)
+
+var (
+	SeckillConfCtx = newSeckillConf()
 )
 
 const (
@@ -12,16 +15,7 @@ const (
 	ProductStatusForceSaleout = 2 //商品强制售罄
 )
 
-//redis config
-type RedisConf struct {
-	RedisConn             *redis.Client //连接
-	ProxyToLayerQueueName string        //队列名称
-	LayerToProxyQueueName string        //队列名称
-	IdBlackListHash       string        //用户黑名单hash表
-	IpBlackListHash       string        //IP黑名单hash表
-	IdBlackListQueue      string        //用户黑名单队列
-	IpBlackListQueue      string        //IP黑名单队列
-}
+
 
 //etcd config
 type EtcdConf struct {
@@ -97,4 +91,11 @@ type SecKillConf struct {
 
 	UserConnMap  map[string]chan *SecResult
 	UserConnLock sync.Mutex
+}
+
+
+func newSeckillConf() (*SecKillConf) {
+	return &SecKillConf{
+
+	}
 }
